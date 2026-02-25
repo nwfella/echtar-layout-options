@@ -3,238 +3,568 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECHTAR Group | Global Engineering & Consultancy</title>
+    <title>Echtar Group | Global Excellence in Engineering & Consultancy</title>
+    <meta name="description" content="Since 1983, Echtar Group has evolved into a global leader in Project Management, Smart Engineering, and Sustainable Solutions across the Middle East, Europe, and Ukraine.">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
                     colors: {
-                        brand: '#0A2540', /* Authoritative Navy */
-                        accent: '#0066CC', /* Modern Tech Blue */
-                        light: '#F8FAFC'
+                        brand: {
+                            dark: '#0f172a',    // slate-900
+                            primary: '#1e3a8a', // blue-900
+                            accent: '#f59e0b',  // amber-500
+                            light: '#f8fafc',   // slate-50
+                        }
                     }
                 }
             }
         }
     </script>
+    
+    <style>
+        /* Custom Styles for Background Overlays & Effects */
+        .hero-bg {
+            background-image: linear-gradient(rgba(239, 246, 255, 0.85), rgba(219, 234, 254, 0.95)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2831&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .sustainability-bg {
+            background-image: linear-gradient(rgba(30, 58, 138, 0.9), rgba(30, 58, 138, 0.9)), url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
 </head>
-<body class="font-sans antialiased text-gray-800 bg-white">
+<body class="font-sans text-slate-600 bg-brand-light antialiased">
 
-    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0">
-                    <span class="text-2xl font-bold text-brand tracking-tight">ECHTAR<span class="text-accent">Group</span></span>
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" id="logo-text" class="font-heading font-bold text-2xl tracking-tight text-brand-primary flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group text-brand-accent"></i>
+                        ECHTAR<span class="font-light">GROUP</span>
+                    </a>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="text-gray-600 hover:text-accent font-medium transition">About</a>
-                    <a href="#expertise" class="text-gray-600 hover:text-accent font-medium transition">Expertise</a>
-                    <a href="#sustainability" class="text-gray-600 hover:text-accent font-medium transition">Sustainability</a>
-                    <a href="#contact" class="bg-brand text-white px-5 py-2 rounded-md font-medium hover:bg-accent transition">Get in Touch</a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="nav-link text-brand-primary hover:text-brand-accent transition-colors text-sm font-medium uppercase tracking-wide">About</a>
+                    <a href="#expertise" class="nav-link text-brand-primary hover:text-brand-accent transition-colors text-sm font-medium uppercase tracking-wide">Expertise</a>
+                    <a href="#sustainability" class="nav-link text-brand-primary hover:text-brand-accent transition-colors text-sm font-medium uppercase tracking-wide">Sustainability</a>
+                    <a href="#contact" class="bg-brand-accent text-brand-dark px-5 py-2 rounded font-semibold hover:bg-yellow-400 transition-colors shadow-lg">Contact Us</a>
                 </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-primary hover:text-brand-accent focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-50/95 backdrop-blur-md border-t border-blue-200 mt-4 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1 text-center">
+                <a href="#about" class="block px-3 py-3 text-brand-primary font-medium hover:text-brand-accent">About Us</a>
+                <a href="#expertise" class="block px-3 py-3 text-brand-primary font-medium hover:text-brand-accent">Our Expertise</a>
+                <a href="#sustainability" class="block px-3 py-3 text-brand-primary font-medium hover:text-brand-accent">Sustainability</a>
+                <a href="#contact" class="block px-3 py-3 text-brand-accent font-bold hover:text-yellow-500">Contact Us</a>
             </div>
         </div>
     </nav>
 
-    <section class="relative bg-brand text-white pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
-                Shaping the Future Through <br><span class="text-blue-400">Smart Engineering</span>
-            </h1>
-            <p class="mt-4 text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10">
-                Delivering cutting-edge solutions across the Middle East, Europe, and Ukraine. Your global partner in Project Management and EPC Contracting.
-            </p>
-            <div class="flex justify-center gap-4">
-                <a href="#expertise" class="bg-accent hover:bg-blue-500 text-white px-8 py-3 rounded-md font-bold text-lg transition">Explore Our Pillars</a>
-                <a href="#contact" class="bg-transparent border-2 border-white hover:bg-white hover:text-brand text-white px-8 py-3 rounded-md font-bold text-lg transition">Contact Us</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center relative pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="max-w-4xl">
+                <div class="inline-block bg-blue-100/80 backdrop-blur-sm border border-blue-200 text-brand-primary px-4 py-1 rounded-full text-sm font-semibold tracking-wider mb-6">
+                    <i class="fa-solid fa-globe mr-2"></i> Middle East | Europe | Ukraine
+                </div>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-heading font-extrabold text-brand-dark leading-tight mb-6">
+                    Smart Consultancy <span class="text-brand-accent">Governance & Management.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-700 mb-10 max-w-3xl leading-relaxed">
+                    Since 1983, we have evolved from a premier trading house into a global leader in Project Management, Smart Engineering, and Sustainable Solutions.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#expertise" class="bg-brand-accent text-brand-dark px-8 py-4 rounded font-bold text-center hover:bg-yellow-400 transition-all shadow-[0_0_15px_rgba(245,158,11,0.4)]">
+                        View Our Projects
+                    </a>
+                    <a href="#contact" class="bg-transparent border-2 border-brand-primary text-brand-primary px-8 py-4 rounded font-bold text-center hover:bg-brand-primary hover:text-white transition-all">
+                        Contact Our Experts
+                    </a>
+                </div>
             </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
+            <a href="#about" class="text-brand-primary/50 hover:text-brand-primary transition-colors">
+                <i class="fa-solid fa-chevron-down text-3xl"></i>
+            </a>
         </div>
     </section>
 
-    <div class="bg-light py-8 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Decades of Global Excellence Trusted By</p>
-            <div class="flex flex-wrap justify-center gap-12 opacity-50 grayscale">
-                <span class="text-xl font-bold">Client Logo 1</span>
-                <span class="text-xl font-bold">Client Logo 2</span>
-                <span class="text-xl font-bold">Client Logo 3</span>
-                <span class="text-xl font-bold">Client Logo 4</span>
-            </div>
-        </div>
-    </div>
-
-    <section id="about" class="py-20">
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-32 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:flex lg:items-center lg:gap-16">
-                <div class="lg:w-1/2 mb-10 lg:mb-0">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356f58?q=80&w=2070&auto=format&fit=crop" alt="Engineering Planning" class="rounded-lg shadow-xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative w-full aspect-[4/3] lg:aspect-[4/5] max-h-[600px] bg-slate-200 rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=1000&auto=format&fit=crop" alt="Engineering Construction" class="absolute inset-0 w-full h-full object-cover rounded-lg shadow-2xl z-10" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop'">
+                    <div class="absolute -bottom-6 -right-6 w-full h-full border-4 border-brand-accent rounded-lg z-0 hidden md:block"></div>
+                    <!-- Stats Badge -->
+                    <div class="absolute -top-8 -left-8 bg-brand-primary text-white p-6 rounded-lg shadow-xl z-20 hidden md:block">
+                        <p class="text-4xl font-heading font-bold text-brand-accent">40+</p>
+                        <p class="text-sm font-medium uppercase tracking-wider">Years of<br>Excellence</p>
+                    </div>
                 </div>
-                <div class="lg:w-1/2">
-                    <h2 class="text-sm font-bold text-accent uppercase tracking-widest mb-2">Our Evolution</h2>
-                    <h3 class="text-3xl font-bold text-brand mb-6">A Legacy of Innovation Since 1983</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Founded in 1983, ECHTAR Group has continuously adapted to meet the dynamic challenges of an ever-changing world. What began as a general trading house has evolved into a powerhouse in specialized engineering, EPC contracting, and global consultancy.
-                    </p>
-                    <p class="text-gray-600 leading-relaxed">
-                        Driven by a commitment to agility and modernization, we leverage advanced technologies—from BIM 3D Design to AI-driven resource tracking—ensuring that every project we touch is built for the future.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="expertise" class="py-20 bg-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-brand mb-12">The Three Pillars of Our Expertise</h2>
-            <div class="grid md:grid-cols-3 gap-8">
                 
-                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition border-t-4 border-accent text-left">
-                    <div class="w-12 h-12 bg-blue-100 text-accent rounded-lg flex items-center justify-center mb-6 text-2xl font-bold">1</div>
-                    <h4 class="text-xl font-bold text-brand mb-4">Engineering & Construction Management</h4>
-                    <p class="text-gray-600 mb-4">Leading complex projects with precision, safety, and efficiency from design to handover.</p>
-                    <ul class="text-sm text-gray-500 space-y-2">
-                        <li>✓ Architecture & MEP Design</li>
-                        <li>✓ BIM 3D Design & Modeling</li>
-                        <li>✓ Smart Contract Execution</li>
-                        <li>✓ Process Value Engineering</li>
-                    </ul>
-                </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition border-t-4 border-accent text-left">
-                    <div class="w-12 h-12 bg-blue-100 text-accent rounded-lg flex items-center justify-center mb-6 text-2xl font-bold">2</div>
-                    <h4 class="text-xl font-bold text-brand mb-4">Consultancy & Strategic Governance</h4>
-                    <p class="text-gray-600 mb-4">Turning visions into actionable, high-yield realities through expert guidance.</p>
-                    <ul class="text-sm text-gray-500 space-y-2">
-                        <li>✓ Feasibility Studies</li>
-                        <li>✓ Front-End Engineering Design (FEED)</li>
-                        <li>✓ Policy Structuring</li>
-                        <li>✓ Project Management & PMO Setup</li>
-                    </ul>
-                </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition border-t-4 border-accent text-left">
-                    <div class="w-12 h-12 bg-blue-100 text-accent rounded-lg flex items-center justify-center mb-6 text-2xl font-bold">3</div>
-                    <h4 class="text-xl font-bold text-brand mb-4">Global Trading & Procurement</h4>
-                    <p class="text-gray-600 mb-4">Ensuring your supply chain is resilient, compliant, and cost-effective across borders.</p>
-                    <ul class="text-sm text-gray-500 space-y-2">
-                        <li>✓ Custom Sourcing Strategies</li>
-                        <li>✓ Quality Assurance & Vendor Vetting</li>
-                        <li>✓ Logistics Optimization</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-brand mb-12 text-center">Featured Projects</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="group relative overflow-hidden rounded-lg shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=2070&auto=format&fit=crop" alt="Project 1" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand to-transparent opacity-90"></div>
-                    <div class="absolute bottom-0 p-6 text-white">
-                        <span class="text-accent text-sm font-bold uppercase">EPC Contracting</span>
-                        <h3 class="text-xl font-bold mt-1">Middle East Industrial Hub Expansion</h3>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden rounded-lg shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" alt="Project 2" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand to-transparent opacity-90"></div>
-                    <div class="absolute bottom-0 p-6 text-white">
-                        <span class="text-accent text-sm font-bold uppercase">Strategic Governance</span>
-                        <h3 class="text-xl font-bold mt-1">European Smart City Infrastructure</h3>
+                <div>
+                    <h2 class="text-brand-primary font-bold tracking-wider uppercase text-sm mb-2">Our Evolution</h2>
+                    <h3 class="text-3xl md:text-4xl font-heading font-bold text-brand-dark mb-6">From Trading Roots to Global Solutions</h3>
+                    
+                    <div class="space-y-6 text-lg text-slate-600">
+                        <p>
+                            Founded in 1983, <strong>ECHTAR Group (EG)</strong> began as a focused trading and distribution company. Over the last four decades, we have aggressively expanded our vision. 
+                        </p>
+                        <p>
+                            Today, we are one of the fastest-growing regional powerhouses, transforming from a goods importer into a comprehensive Business Solutions Provider. We bridge the gap between complex engineering theory and practical reality.
+                        </p>
+                        <div class="bg-slate-50 border-l-4 border-brand-accent p-6 rounded-r-lg mt-8 shadow-sm">
+                            <p class="text-brand-dark font-medium italic">
+                                "By integrating modern 'Smart' approaches—including BIM 3D Design and Digital Engineering—we offer mutual partnership commitments built on trust, governance, and unwavering HSSE standards."
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sustainability" class="py-20 bg-brand text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-6">Building a Sustainable Tomorrow</h2>
-            <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-                At ECHTAR Group, we don’t just engineer structures; we engineer progress. We adhere strictly to a "Triple Value" approach: balancing Economic Growth, Social Progress, and Environmental Stewardship.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div class="p-4"><p class="font-bold text-lg text-accent">Green Energy Integration</p></div>
-                <div class="p-4 border-y md:border-y-0 md:border-x border-gray-600"><p class="font-bold text-lg text-accent">Waste Minimization</p></div>
-                <div class="p-4"><p class="font-bold text-lg text-accent">Digital Process Optimization</p></div>
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-20 md:py-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand-primary font-bold tracking-wider uppercase text-sm mb-2">Our Core Pillars</h2>
+                <h3 class="text-3xl md:text-5xl font-heading font-bold text-brand-dark mb-6">Comprehensive Expertise</h3>
+                <p class="text-lg text-slate-600">Delivering end-to-end lifecycle support across diverse sectors through our three foundational pillars of operation.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-shadow border-t-4 border-brand-primary group">
+                    <div class="w-16 h-16 bg-blue-50 text-brand-primary rounded-lg flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-primary group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-helmet-safety"></i>
+                    </div>
+                    <h4 class="text-xl font-heading font-bold text-brand-dark mb-4">Engineering & Construction</h4>
+                    <p class="text-slate-600 mb-6">Providing end-to-end lifecycle support for complex infrastructure projects with a "Smart Design" philosophy for flexibility and scalability.</p>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-accent mt-1 mr-3"></i> <span><strong>Core:</strong> Civil, MEP, & Digital Engineering.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-accent mt-1 mr-3"></i> <span><strong>Tech:</strong> BIM 3D Design-Build models.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-accent mt-1 mr-3"></i> <span><strong>Projects:</strong> Airports, Infrastructure, CCTV, Data Centers.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-accent mt-1 mr-3"></i> <span><strong>Models:</strong> Lump Sum, EPC, and O&M.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-shadow border-t-4 border-brand-accent group">
+                    <div class="w-16 h-16 bg-amber-50 text-brand-accent rounded-lg flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-accent group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h4 class="text-xl font-heading font-bold text-brand-dark mb-4">Smart Consultancy Governance & Management</h4>
+                    <p class="text-slate-600 mb-6">Our highly qualified team of over 40 professionals delivers world-class governance and strategic solutions.</p>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-accent mt-1 mr-3"></i> <span><strong>Services:</strong> Smart Administration & Project Governance.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-accent mt-1 mr-3"></i> <span><strong>Optimization:</strong> Revenue optimization strategies.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-accent mt-1 mr-3"></i> <span><strong>Knowledge Transfer:</strong> Training & skills transfer.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-accent mt-1 mr-3"></i> <span><strong>Empowerment:</strong> Building sustainable local businesses.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-shadow border-t-4 border-brand-primary group">
+                    <div class="w-16 h-16 bg-blue-50 text-brand-primary rounded-lg flex items-center justify-center text-3xl mb-6 group-hover:bg-brand-primary group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-ship"></i>
+                    </div>
+                    <h4 class="text-xl font-heading font-bold text-brand-dark mb-4">Global Trading & Procurement</h4>
+                    <p class="text-slate-600 mb-6">Building on our legacy, we supply critical equipment across borders with specific speed in the Middle East.</p>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-accent mt-1 mr-3"></i> <span><strong>Energy:</strong> Oil & Gas, Renewable Energy Plants.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-accent mt-1 mr-3"></i> <span><strong>Infrastructure:</strong> Water Treatment facilities.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-accent mt-1 mr-3"></i> <span><strong>Medical:</strong> MRI/X-Ray & Surgical Equipment.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-brand-accent mt-1 mr-3"></i> <span><strong>Scientific:</strong> Full lab & pharmaceutical procurement.</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 bg-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-brand">Ready to Start Your Project?</h2>
-                <p class="mt-4 text-gray-600">Contact our teams in France, Ukraine, or Iraq to discuss how we can engineer your success.</p>
+    <!-- Sustainability Section -->
+    <section id="sustainability" class="sustainability-bg py-20 md:py-32 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-brand-accent font-bold tracking-wider uppercase text-sm mb-2">Innovation & Future</h2>
+                    <h3 class="text-3xl md:text-5xl font-heading font-bold text-white mb-6">Universal Environmental Solutions</h3>
+                    <p class="text-lg text-blue-100 mb-8">
+                        We are committed to a "Triple Value" approach: Economic Growth, Social Progress, and Environmental Stewardship.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start bg-white/10 p-5 rounded-lg backdrop-blur-sm border border-white/20">
+                            <div class="bg-brand-accent p-3 rounded-full text-brand-dark mr-4">
+                                <i class="fa-solid fa-leaf text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">Green Energy</h4>
+                                <p class="text-blue-100 text-sm">Design and implementation of renewable energy plants to power the future sustainably.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start bg-white/10 p-5 rounded-lg backdrop-blur-sm border border-white/20">
+                            <div class="bg-brand-accent p-3 rounded-full text-brand-dark mr-4">
+                                <i class="fa-solid fa-recycle text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">Process Optimization</h4>
+                                <p class="text-blue-100 text-sm">Using advanced business intelligence to reduce waste and aggressively optimize inventory occupancy.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start bg-white/10 p-5 rounded-lg backdrop-blur-sm border border-white/20">
+                            <div class="bg-brand-accent p-3 rounded-full text-brand-dark mr-4">
+                                <i class="fa-solid fa-shield-halved text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-1">Strict HSSE Compliance</h4>
+                                <p class="text-blue-100 text-sm">Health, Safety, Security, and Environment. All projects strictly adhere to rigorous International Codes & Standards.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex justify-center">
+                    <!-- Decorative Graphic -->
+                    <div class="relative w-96 h-96">
+                        <div class="absolute inset-0 border-4 border-brand-accent rounded-full animate-[spin_20s_linear_infinite] border-t-transparent"></div>
+                        <div class="absolute inset-4 border-4 border-blue-400/50 rounded-full animate-[spin_15s_linear_infinite_reverse] border-b-transparent"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fa-solid fa-globe text-6xl text-brand-accent mb-2"></i>
+                                <div class="font-heading font-bold text-2xl">TRIPLE<br>VALUE</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="lg:flex lg:gap-12">
-                <div class="lg:w-2/3 bg-white p-8 rounded-lg shadow-md mb-10 lg:mb-0">
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="text-brand-primary font-bold tracking-wider uppercase text-sm mb-2">Get in Touch</h2>
+                    <h3 class="text-3xl md:text-5xl font-heading font-bold text-brand-dark mb-6">Global Reach.<br>Local Expertise.</h3>
+                    <p class="text-lg text-slate-600 mb-10">Operating extensively across Europe and the Middle East, our experts are ready to transform your engineering theories into practical realities.</p>
+                    
+                    <div class="space-y-8">
+                        <!-- Location 1 -->
+                        <div class="flex items-start">
+                            <div class="mt-1 text-brand-accent text-2xl mr-4"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-lg">France (Europe HQ)</h4>
+                                <p class="text-slate-600">95600 EAUBONNE<br>FRANCE</p>
+                                <a href="tel:+33603241848" class="text-brand-primary hover:text-brand-accent font-medium mt-1 inline-block"><i class="fa-solid fa-phone mr-2 text-sm"></i>+33 6 03 24 18 48</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Location 2 -->
+                        <div class="flex items-start">
+                            <div class="mt-1 text-brand-accent text-2xl mr-4"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-lg">Ukraine</h4>
+                                <p class="text-slate-600">Villa 14, Lozuvatka District<br>Kryvyi Rih, Dnipropetrovsk Oblast<br>Zaporizhzhia, 69000</p>
+                                <a href="tel:+380972221422" class="text-brand-primary hover:text-brand-accent font-medium mt-1 inline-block"><i class="fa-solid fa-phone mr-2 text-sm"></i>+38 09 72 22 14 22</a>
+                            </div>
+                        </div>
+
+                        <!-- Location 3 -->
+                        <div class="flex items-start">
+                            <div class="mt-1 text-brand-accent text-2xl mr-4"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark text-lg">Iraq (Middle East)</h4>
+                                <p class="text-slate-600">Building 14, Al Kafaat St.<br>Kut, Wasit Governate</p>
+                                <div class="flex flex-col mt-1 space-y-1">
+                                    <a href="tel:+964722222792" class="text-brand-primary hover:text-brand-accent font-medium"><i class="fa-solid fa-phone mr-2 text-sm"></i>+964 722 222 792</a>
+                                    <a href="tel:+9647724660240" class="text-brand-primary hover:text-brand-accent font-medium"><i class="fa-solid fa-phone mr-2 text-sm"></i>+964 77 24 66 02 40</a>
+                                    <a href="mailto:info@echtar.com" class="text-brand-primary hover:text-brand-accent font-medium mt-1"><i class="fa-solid fa-envelope mr-2 text-sm"></i>info@echtar.com</a>
+                                    <a href="mailto:projects@echtar.com" class="text-brand-primary hover:text-brand-accent font-medium"><i class="fa-solid fa-envelope mr-2 text-sm"></i>projects@echtar.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-slate-50 p-8 rounded-2xl shadow-lg border border-slate-100">
+                    <h4 class="text-2xl font-heading font-bold text-brand-dark mb-6">Send Us a Message</h4>
+                    <!-- Note: For actual email delivery on Hostwinds, point the action to a PHP mailer script or Formspree -->
                     <form action="#" method="POST" class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
-                                <input type="text" id="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent p-3 bg-gray-50 border" placeholder="John Doe">
+                                <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition-all">
                             </div>
                             <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                                <input type="email" id="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent p-3 bg-gray-50 border" placeholder="john@company.com">
+                                <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition-all">
                             </div>
                         </div>
                         <div>
-                            <label for="location" class="block text-sm font-medium text-gray-700">Which office are you trying to reach?</label>
-                            <select id="location" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent p-3 bg-gray-50 border">
-                                <option>General Inquiry</option>
-                                <option>France (Paris)</option>
-                                <option>Ukraine (Kyiv)</option>
-                                <option>Iraq (Baghdad/Erbil/Basra)</option>
+                            <label for="subject" class="block text-sm font-medium text-slate-700 mb-1">Subject / Inquiry Type</label>
+                            <select id="subject" name="subject" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition-all bg-white">
+                                <option value="engineering">Engineering & Construction</option>
+                                <option value="consultancy">Smart Consultancy Governance & Management</option>
+                                <option value="trading">Global Trading & Procurement</option>
+                                <option value="other">General Inquiry</option>
                             </select>
                         </div>
                         <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                            <textarea id="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent p-3 bg-gray-50 border" placeholder="Tell us about your project..."></textarea>
+                            <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition-all resize-none"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-brand text-white font-bold py-3 px-4 rounded-md hover:bg-accent transition">Send Message</button>
+                        <button type="submit" class="w-full bg-brand-primary text-white font-bold py-4 rounded-lg hover:bg-blue-800 transition-colors shadow-md flex justify-center items-center gap-2">
+                            <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
+                        </button>
                     </form>
-                </div>
-
-                <div class="lg:w-1/3 space-y-8">
-                    <div>
-                        <h4 class="text-xl font-bold text-brand flex items-center gap-2">
-                            <span class="text-2xl">🇫🇷</span> France (Headquarters)
-                        </h4>
-                        <p class="text-gray-600 mt-2">123 Champs-Élysées<br>75008 Paris, France</p>
-                        <p class="text-accent mt-1">+33 1 23 45 67 89</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-brand flex items-center gap-2">
-                            <span class="text-2xl">🇺🇦</span> Ukraine
-                        </h4>
-                        <p class="text-gray-600 mt-2">45 Khreshchatyk Street<br>01001 Kyiv, Ukraine</p>
-                        <p class="text-accent mt-1">+380 44 123 4567</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold text-brand flex items-center gap-2">
-                            <span class="text-2xl">🇮🇶</span> Iraq
-                        </h4>
-                        <p class="text-gray-600 mt-2">Baghdad | Erbil | Basra</p>
-                        <p class="text-accent mt-1">+964 780 123 4567</p>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
-        <div class="max-w-7xl mx-auto px-4">
-            <p>&copy; 2026 ECHTAR Group. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="bg-blue-50 pt-16 pb-8 border-t-4 border-brand-accent text-slate-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <a href="#" class="font-heading font-bold text-2xl tracking-tight text-brand-primary flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-layer-group text-brand-accent"></i>
+                        ECHTAR<span class="font-light">GROUP</span>
+                    </a>
+                    <p class="mb-6 max-w-sm">Decades of global excellence in Project Management, Smart Engineering, and Sustainable Solutions.</p>
+                    <div class="text-brand-accent font-heading font-bold italic">
+                        "Realizing Theory into Practice | 2004 - 2026"
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-brand-primary font-bold mb-4 uppercase tracking-wider text-sm">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-brand-accent transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-brand-accent transition-colors">About Us</a></li>
+                        <li><a href="#expertise" class="hover:text-brand-accent transition-colors">Our Expertise</a></li>
+                        <li><a href="#sustainability" class="hover:text-brand-accent transition-colors">Sustainability</a></li>
+                        <li><a href="#contact" class="hover:text-brand-accent transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-brand-primary font-bold mb-4 uppercase tracking-wider text-sm">Key Markets</h4>
+                    <ul class="space-y-2">
+                        <li>Middle East (Iraq, Kurdistan & GCC)</li>
+                        <li>Europe</li>
+                        <li>Ukraine</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; 2026 Echtar Group. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-brand-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-brand-primary transition-colors">Terms of Service</a>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <!-- AI Chatbot Widget -->
+    <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <!-- Chat Panel -->
+        <div id="ai-chat-panel" class="hidden mb-4 w-80 sm:w-96 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col h-96 transition-all origin-bottom-right">
+            <div class="bg-brand-primary p-4 text-white flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-robot text-brand-accent"></i>
+                    <h4 class="font-bold font-heading">Echtar AI Assistant</h4>
+                </div>
+                <button id="close-chat-btn" class="text-white hover:text-brand-accent transition-colors"><i class="fa-solid fa-times"></i></button>
+            </div>
+            
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 bg-slate-50 text-sm">
+                <!-- Messages will appear here -->
+                <div class="flex items-start gap-2">
+                    <div class="bg-brand-primary/10 p-3 rounded-lg rounded-tl-none text-brand-dark max-w-[85%]">
+                        Hello! I am the Echtar Group AI Assistant. How can I help you today?
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-3 bg-white border-t border-slate-100 flex gap-2">
+                <input type="text" id="chat-input" placeholder="Type your question..." class="flex-1 px-3 py-2 rounded-lg border border-slate-300 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary text-sm">
+                <button id="send-chat-btn" class="bg-brand-primary text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition-colors">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Toggle Button -->
+        <button id="toggle-chat-btn" class="bg-brand-primary text-white p-4 rounded-full shadow-[0_0_15px_rgba(30,58,138,0.3)] hover:bg-blue-800 transition-all hover:scale-105 flex items-center justify-center">
+            <i class="fa-solid fa-message text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.remove('bg-transparent', 'py-4');
+                navbar.classList.add('bg-blue-50', 'py-2', 'shadow-lg');
+            } else {
+                navbar.classList.add('bg-transparent', 'py-4');
+                navbar.classList.remove('bg-blue-50', 'py-2', 'shadow-lg');
+            }
+        });
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // --- AI Chatbot Logic (Gemini API) ---
+        const toggleChatBtn = document.getElementById('toggle-chat-btn');
+        const closeChatBtn = document.getElementById('close-chat-btn');
+        const chatPanel = document.getElementById('ai-chat-panel');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const sendChatBtn = document.getElementById('send-chat-btn');
+        
+        // Toggle Panel
+        const toggleChat = () => chatPanel.classList.toggle('hidden');
+        toggleChatBtn.addEventListener('click', toggleChat);
+        closeChatBtn.addEventListener('click', () => chatPanel.classList.add('hidden'));
+
+        // Gemini API Configuration
+        const apiKey = "";
+        
+        function addMessage(text, isUser = false) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `flex items-start gap-2 ${isUser ? 'justify-end' : ''}`;
+            msgDiv.innerHTML = `
+                <div class="${isUser ? 'bg-brand-primary text-white rounded-tr-none' : 'bg-brand-primary/10 text-brand-dark rounded-tl-none'} p-3 rounded-lg max-w-[85%]">
+                    ${text}
+                </div>
+            `;
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        async function fetchGeminiResponse(userQuery, retries = 5) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            const systemPrompt = "You are an AI assistant for Echtar Group, a global leader in Project Management, Smart Engineering, and Sustainable Solutions. Be helpful and concise.";
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] }
+            };
+
+            let delay = 1000;
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    if (!response.ok) throw new Error(`HTTP status: ${response.status}`);
+                    
+                    const data = await response.json();
+                    return data.candidates?.[0]?.content?.parts?.[0]?.text || "I'm not sure how to respond to that.";
+                } catch (error) {
+                    if (i === retries - 1) return "Sorry, I am currently unavailable. Please try again later.";
+                    await new Promise(res => setTimeout(res, delay));
+                    delay *= 2; // Exponential backoff
+                }
+            }
+        }
+
+        async function handleSend() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+            
+            // Add user message
+            addMessage(text, true);
+            chatInput.value = '';
+            
+            // Add loading indicator
+            const loadingId = 'loading-' + Date.now();
+            const loadingDiv = document.createElement('div');
+            loadingDiv.id = loadingId;
+            loadingDiv.className = 'flex items-start gap-2';
+            loadingDiv.innerHTML = `<div class="bg-brand-primary/10 text-brand-dark p-3 rounded-lg rounded-tl-none max-w-[85%] flex items-center gap-2">
+                <i class="fa-solid fa-circle-notch fa-spin text-brand-accent"></i> Thinking...
+            </div>`;
+            chatMessages.appendChild(loadingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Fetch AI response
+            const responseText = await fetchGeminiResponse(text);
+            
+            // Remove loading and add actual response
+            document.getElementById(loadingId).remove();
+            addMessage(responseText);
+        }
+
+        sendChatBtn.addEventListener('click', handleSend);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleSend();
+        });
+    </script>
 </body>
 </html>
